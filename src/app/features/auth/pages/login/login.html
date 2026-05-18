@@ -1,0 +1,8 @@
+<div class="login">
+  <h2>Login</h2>
+  <div class="form">
+    <input type="email" [formField]="loginForm.email" />
+    <input type="password" [formField]="loginForm.password" />
+    <p>Email : {{ loginForm.email().value() }}</p>
+  </div>
+</div>
