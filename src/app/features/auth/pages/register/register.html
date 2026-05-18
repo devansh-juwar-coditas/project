@@ -1,0 +1,88 @@
+<div class="register">
+  <h2>Register</h2>
+  <form (submit)="onSubmitCandidate($event)">
+    <div>
+      <label
+        >Title :
+        <select [formField]="registerForm.title">
+          <option>Select a Title</option>
+          <option value="Mr.">Mr.</option>
+          <option value="Ms.">Ms.</option>
+          <option value="Dr.">Dr.</option>
+        </select>
+      </label>
+      @if (registerForm.title().touched() && registerForm.title().invalid()) {
+        <ul class="error-list">
+          @for (error of registerForm.title().errors(); track error) {
+            <p>{{ error.message }}</p>
+          }
+        </ul>
+      }
+      <label
+        >Name :
+        <input type="text" [formField]="registerForm.name" />
+      </label>
+      @if (registerForm.name().touched() && registerForm.name().invalid()) {
+        <ul class="error-list">
+          @for (error of registerForm.name().errors(); track error) {
+            <p>{{ error.message }}</p>
+          }
+        </ul>
+      }
+      <label
+        >Surname :
+        <input type="text" [formField]="registerForm.surname" />
+      </label>
+      @if (registerForm.surname().touched() && registerForm.surname().invalid()) {
+        <ul class="error-list">
+          @for (error of registerForm.surname().errors(); track error) {
+            <p>{{ error.message }}</p>
+          }
+        </ul>
+      }
+      <label
+        >Degree :
+        <input type="text" [formField]="registerForm.degree" />
+      </label>
+      @if (registerForm.degree().touched() && registerForm.degree().invalid()) {
+        <ul class="error-list">
+          @for (error of registerForm.degree().errors(); track error) {
+            <p>{{ error.message }}</p>
+          }
+        </ul>
+      }
+      <label
+        >Year of Passing :
+        <input type="number" [formField]="registerForm.yearofPassing" />
+      </label>
+      @if (registerForm.yearofPassing().touched() && registerForm.yearofPassing().invalid()) {
+        <ul class="error-list">
+          @for (error of registerForm.yearofPassing().errors(); track error) {
+            <p>{{ error.message }}</p>
+          }
+        </ul>
+      }
+      <label>Email : <input type="email" [formField]="registerForm.email" /> </label>
+      @if (registerForm.email().touched() && registerForm.email().invalid()) {
+        <ul class="error-list">
+          @for (error of registerForm.email().errors(); track error) {
+            <p>{{ error.message }}</p>
+          }
+        </ul>
+      }
+      <label>
+        Password :
+        <input type="password" [formField]="registerForm.password" />
+      </label>
+      @if (registerForm.password().touched() && registerForm.password().invalid()) {
+        <ul class="error-list">
+          @for (error of registerForm.password().errors(); track error) {
+            <p>{{ error.message }}</p>
+          }
+        </ul>
+      }
+    </div>
+    <button type="submit">Register</button>
+  </form>
+  <p class="login-btn">Already have an account? <a routerLink="/login">Login</a></p>
+</div>
